@@ -1,229 +1,233 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-background-color: rgb(24, 24, 57);
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: flex-start;
-min-height: 100vh;
-padding: 30px 10px; /* Adicionado padding lateral */
+  background-color: rgb(24, 24, 57);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 30px 10px;
 }
 
 .titulo-pagina {
-color: white;
-text-align: center;
-margin-bottom: 20px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* --- ESTILO DA BUSCA --- */
+/* Barra de busca */
 .buscar-box {
-width: 100%; /* Ajuste para ser responsivo */
-max-width: 500px; /* Limite o tamanho máximo */
-height: 50px;
-background-color: rgba(113, 124, 136, 0.489);
-display: flex;
-align-items: center;
-border-radius: 8px;
-overflow: hidden;
-margin-top: 30px;
+  width: 100%;
+  max-width: 500px;
+  height: 50px;
+  background-color: rgba(113, 124, 136, 0.489);
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 30px;
 }
 
 .input-buscar {
-flex: 1;
-height: 100%;
+  flex: 1;
+  height: 100%;
 }
 
 .input-buscar input {
-width: 100%;
-height: 100%;
-border: none;
-outline: none;
-background: transparent;
-font-size: 16px;
-padding: 0 20px;
-color: white; /* Corrigido para branco */
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 0 20px;
+  color: white;
 }
 
 .input-buscar input::placeholder {
-color: #a8a2a2;
+  color: #a8a2a2;
 }
 
 .lupa-buscar {
-width: 60px;
-height: 100%; /* Corrigido para 100% da altura do box */
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
+  width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .lupa-buscar i {
-font-size: 20px;
-color: #a8a2a2;
+  font-size: 20px;
+  color: #a8a2a2;
 }
 
-/* --- FILTROS DE FAVORITOS --- */
+/* Mensagem de erro */
+.mensagem-erro {
+  display: none;
+  color: #ff6b6b;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Filtro de favoritos */
 .filmes-fav {
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: white;
-    font-size: 14px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+  font-size: 14px;
 }
 
 .filmes-fav input[type="checkbox"] {
-appearance: none;
-width: 14px;
-height: 14px; 
-cursor: pointer;
-background-color: transparent;
-border: 2px solid rgb(89, 89, 199);
-border-radius: 2px;
-transition: background-color 0.2s, transform 0.1s;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid rgb(89, 89, 199);
+  border-radius: 2px;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .filmes-fav input[type="checkbox"]:checked {
-background-color: rgb(89, 89, 199); /* Fundo colorido ao checar */
+  background-color: rgb(89, 89, 199);
 }
 
-.filmes-fav input[type="checkbox"]:active {
-transform: scale(0.9);
-}
-
-/* --- CAIXA DE FILMES GERAL --- */
+/* Lista de filmes */
 .filmes-box {
-margin-top: 50px;
-display: flex;
-flex-direction: column;
-gap: 30px;
-width: 90%;
-max-width: 1000px;
-padding-bottom: 30px; /* Espaço inferior para o último filme */
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 90%;
+  max-width: 1000px;
+  padding-bottom: 30px;
 }
 
-/* --- FILME INDIVIDUAL --- */
 .filme {
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-background-color: rgb(35, 35, 79);
-color: #ffffff;
-padding: 20px;
-gap: 20px;
-border-radius: 8px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: rgb(35, 35, 79);
+  color: #ffffff;
+  padding: 20px;
+  gap: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
 }
 
-/* Capa do filme */
 .capa img {
-width: 120px; 
-height: 120px; 
-border-radius: 50%;
-object-fit: cover;
-object-position: center;
-border: 4px solid rgb(89, 89, 199);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgb(89, 89, 199);
 }
 
-/* Conteúdo textual */
 .info {
-flex: 1;
-display: flex;
-flex-direction: column;
-gap: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-/* Título */
 .titulo {
-font-size: 22px; /* Aumentado um pouco */
-font-weight: bold;
+  font-size: 22px;
+  font-weight: bold;
 }
 
-/* Linha Nota + Favoritar */
 .linha-info {
-display: flex;
-align-items: center;
-gap: 20px;
-font-size: 14px;
-color: #b5b5b5;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  color: #b5b5b5;
 }
 
-.subtitulo { /* Estilo para a Nota */
-color: #ffffff; /* Verde para nota */
-font-weight: bold;
+.subtitulo {
+  color: #ffffff;
+  font-weight: bold;
 }
 
+/* Botão Favoritar */
 .favoritar {
-cursor: pointer;
-color: #ffffff; /* Vermelho para o texto Favoritar */
-display: flex;
-align-items: center;
-gap: 5px;
-transition: color 0.2s;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.2s;
 }
 
 .favoritar:hover {
-color: #ff8a80;
+  color: #ff8a80;
 }
 
 .favoritar i {
-font-size: 16px;
+  font-size: 20px;
+  transition: color 0.2s;
 }
 
-/* Estilo para ícone de coração preenchido e vazio */
-.bi-heart-fill {
-color: #f44336; /* Coração preenchido */
-}
 .bi-heart {
-color: #a8a2a2; /* Coração vazio */
+  color: #a8a2a2;
 }
 
+.bi-heart-fill {
+  color: #f44336;
+}
 
-/* Resumo */
 .resumo {
-font-size: 14px;
-line-height: 1.5;
-text-align: left; 
-margin-top: 5px;
-color: #e0e0e0;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  margin-top: 5px;
+  color: #e0e0e0;
 }
 
-/* --- RESPONSIVIDADE (Para telas menores que 600px) --- */
+/* Responsividade */
 @media (max-width: 600px) {
-    .filme {
-flex-direction: column; /* Coloca capa e info um abaixo do outro */
-align-items: center; /* Centraliza a capa */
-text-align: center; /* Centraliza o texto */
-}
+  .filme {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .capa {
-margin-bottom: 15px;
-}
+  .capa {
+    margin-bottom: 15px;
+  }
 
-    .resumo {
-text-align: left; /* Mantém o resumo justificado para melhor leitura */
-margin-top: 10px;
-max-height: 80px; /* Limita a altura do resumo em mobile */
-overflow: hidden;
-text-overflow: ellipsis;
-display:-webkit-box;
--webkit-line-clamp: 4; /* Limita a 4 linhas */
--webkit-box-orient: vertical;
-line-clamp: 4;
-}
+  .resumo {
+    text-align: left;
+    margin-top: 10px;
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-clamp: 4;
+  }
 
-.linha-info {
-justify-content: center; /* Centraliza Nota e Favoritar */
-}
+  .linha-info {
+    justify-content: center;
+  }
 
-.titulo {
-text-align: center;
-}
+  .titulo {
+    text-align: center;
+  }
 }
